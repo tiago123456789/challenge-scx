@@ -7,5 +7,6 @@ import { Collaborator } from './collaborator.entity';
   imports: [TypeOrmModule.forFeature([Collaborator])],
   controllers: [CollaboratorController],
   providers: [CollaboratorService],
+  exports: [CollaboratorService],
 })
 export class CollaboratorModule {}

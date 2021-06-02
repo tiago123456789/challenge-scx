@@ -56,7 +56,7 @@ export class ClientService {
         return this.repository.update({ id }, { active: false });
     }
 
-    private async findById(id: string)  {
+    async findById(id: string)  {
         const register = await this.repository.findOne(id);
         if (!register) {
             throw new NotFoundException(CodeException.NOT_FOUND_CLIENT);

@@ -3,9 +3,11 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { ClientModule } from './clients/client.module';
+import { ClientModule } from './client/client.module';
 import { CollaboratorModule } from './collaborator/collaborator.module';
 import { CommonModule } from './common/common.module';
+import { ExperienceNoteModule } from './experience-note/experience-note.module';
+import { StoreModule } from './store/store.module';
 
 @Module({
   imports: [
@@ -29,7 +31,9 @@ import { CommonModule } from './common/common.module';
       }
     }),
     CollaboratorModule,
-    ClientModule
+    ClientModule,
+    StoreModule,
+    ExperienceNoteModule
   ],
   controllers: [AppController],
   providers: [AppService],

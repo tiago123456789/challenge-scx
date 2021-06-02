@@ -4,7 +4,7 @@ import { ClientService } from './client.service';
 import { Client } from './client.entity';
 
 @Controller({ path: "/clients" })
-export class CollaboratorController {
+export class ClientController {
 
   constructor(private readonly service: ClientService) {}
 
