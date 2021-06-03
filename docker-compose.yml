@@ -15,18 +15,18 @@ services:
       networks:
         - app-network
 
-    app: 
-      build: ./
-      restart: always
-      env_file: 
-        - .env
-      ports:
-        - 3000:3000
-      container_name: app
-      networks:
-        - app-network
-      depends_on:
-        - database
+    # app: 
+    #   build: ./
+    #   restart: always
+    #   env_file: 
+    #     - .env
+    #   ports:
+    #     - 3000:3000
+    #   container_name: app
+    #   networks:
+    #     - app-network
+    #   depends_on:
+    #     - database
 
 networks:
   app-network:
