@@ -1,6 +1,6 @@
 import { Body, Controller, Delete, Get, HttpCode, Param, Post, Put, UseFilters } from '@nestjs/common';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { HandlerException } from 'src/common/exceptions/handler.exception';
+import { HandlerException } from '../common/exceptions/handler.exception';
 import { CollaboratorService } from './collaborador.service';
 import { Collaborator } from './collaborator.entity';
 

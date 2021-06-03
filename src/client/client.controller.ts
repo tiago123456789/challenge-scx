@@ -1,5 +1,5 @@
 import { Body, Controller, Delete, Get, HttpCode, Param, Post, Put, UseFilters } from '@nestjs/common';
-import { HandlerException } from 'src/common/exceptions/handler.exception';
+import { HandlerException } from '../common/exceptions/handler.exception';
 import { ClientService } from './client.service';
 import { Client } from './client.entity';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';

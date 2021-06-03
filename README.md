@@ -23,3 +23,11 @@ Instruções para rodar o projeto:
 - Criar um arquivo **.env** baseado no arquivo **.env.example**
 - Executar o comando: **docker-compose up** para rodar o projeto. Após executar esse comando acesso o navegador no seguinte endereço: http://localhost:3000/ para que seja carregada a documentação usando **swagger** é assim você podera fazer o testes.
  - Arquivo com o diagrama do banco de dados está na raiz do projeto e está com o nome **diagrama-de-banco-de-dados.png** 
+
+Instruções para rodar os testes do projeto:
+============================================
+
+- Clonar o projeto
+- Acessar a raiz do projeto
+- Criar um arquivo **.env** baseado no arquivo **.env.example**
+- Executar o comando: **docker-compose -f docker-compose.testing.yml up** para rodar os  testes do projeto. 

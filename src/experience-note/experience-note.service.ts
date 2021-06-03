@@ -1,11 +1,10 @@
 import { Inject, Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import { ClientService } from "src/client/client.service";
-import { CollaboratorService } from "src/collaborator/collaborador.service";
-import { BusinessException } from "src/common/exceptions/business.exception";
-import { CodeException } from "src/common/exceptions/code.exception";
-import { NotFoundException } from "src/common/exceptions/not-found.exception";
-import { StoreService } from "src/store/store.service";
+import { ClientService } from "../client/client.service";
+import { CollaboratorService } from "../collaborator/collaborador.service";
+import { CodeException } from "../common/exceptions/code.exception";
+import { NotFoundException } from "../common/exceptions/not-found.exception";
+import { StoreService } from "../store/store.service";
 import { Repository } from "typeorm";
 import { ExperienceNoteDto } from "./experience-note.dto";
 import { ExperienceNote } from "./experience-note.entity";

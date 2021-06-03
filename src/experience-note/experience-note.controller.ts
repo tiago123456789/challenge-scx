@@ -1,6 +1,6 @@
 import { Body, Controller, Get, HttpCode, Inject, Param, Post, Put, UseFilters } from "@nestjs/common";
 import { ApiOperation, ApiResponse, ApiTags } from "@nestjs/swagger";
-import { HandlerException } from "src/common/exceptions/handler.exception";
+import { HandlerException } from "../common/exceptions/handler.exception";
 import { ExperienceNoteDto } from "./experience-note.dto";
 import { ExperienceNoteService } from "./experience-note.service";
 

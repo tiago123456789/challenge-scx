@@ -1,7 +1,6 @@
-import { IsNotEmpty, Length, Max, Min } from "class-validator";
-import { Client } from "src/client/client.entity";
-import { Collaborator } from "src/collaborator/collaborator.entity";
-import { Store } from "src/store/store.entity";
+import { Client } from "../client/client.entity";
+import { Collaborator } from "../collaborator/collaborator.entity";
+import { Store } from "../store/store.entity";
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
