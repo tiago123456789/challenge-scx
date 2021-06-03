@@ -1,7 +1,7 @@
 import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import { CodeException } from "src/common/exceptions/code.exception";
-import { NotFoundException } from "src/common/exceptions/not-found.exception";
+import { CodeException } from "../common/exceptions/code.exception";
+import { NotFoundException } from "../common/exceptions/not-found.exception";
 import { Repository } from "typeorm";
 import { Collaborator } from "./collaborator.entity";
 

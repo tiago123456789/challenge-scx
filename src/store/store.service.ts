@@ -1,8 +1,7 @@
 import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import { BusinessException } from "src/common/exceptions/business.exception";
-import { CodeException } from "src/common/exceptions/code.exception";
-import { NotFoundException } from "src/common/exceptions/not-found.exception";
+import { CodeException } from "../common/exceptions/code.exception";
+import { NotFoundException } from "../common/exceptions/not-found.exception";
 import { Repository } from "typeorm";
 import { StoreDto } from "./store.dto";
 import { Store } from "./store.entity";
@@ -39,8 +38,6 @@ export class StoreService {
             .where("matrix.id = :matrixId", { matrixId })
             .andWhere("stores.active = true")
             .getMany();
-
-
     }
 
     async updateUnit(matrixId: string, unitId: string, store: StoreDto) {

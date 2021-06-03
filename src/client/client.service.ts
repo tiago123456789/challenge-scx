@@ -1,8 +1,8 @@
 import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import { BusinessException } from "src/common/exceptions/business.exception";
-import { CodeException } from "src/common/exceptions/code.exception";
-import { NotFoundException } from "src/common/exceptions/not-found.exception";
+import { BusinessException } from "../common/exceptions/business.exception";
+import { CodeException } from "../common/exceptions/code.exception";
+import { NotFoundException } from "../common/exceptions/not-found.exception";
 import { Repository } from "typeorm";
 import { Client } from "./client.entity";
 
@@ -65,23 +65,14 @@ export class ClientService {
     }
 
     private async checkIfEmailUsedPerIdDifferentMencionated(email: string, id: string) {
-        const queryBuilder = this.repository.createQueryBuilder("clients");
-        const register = await queryBuilder.where("email = :email", { email })
-                           .andWhere("id != :id", { id })
-                           .getOne();
-
+        const register = await this.repository.query("email = ? AND id != ?", [ email, id ])
         if (register) {
             throw new BusinessException(CodeException.EMAIL_USED_ANOTHER_CLIENT);
         }
-
     }
 
     private async checkIfCellphoneUsedPerIdDifferentMencionated(cellphone: string, id: string) {
-        const queryBuilder = this.repository.createQueryBuilder("clients");
-        const register = await queryBuilder.where("cellphone = :cellphone", { cellphone })
-                           .andWhere("id != :id", { id })
-                           .getOne();
-
+        const register = this.repository.query("cellphone = ? AND id != ?", [ cellphone, id ])
         if (register) {
             throw new BusinessException(CodeException.CELLPHONE_USED_ANOTHER_CLIENT);
         }
@@ -89,9 +80,7 @@ export class ClientService {
     }
 
     private async checkIfEmailUsed(email: string) {
-        const queryBuilder = this.repository.createQueryBuilder("clients");
-        const register = await queryBuilder.where("email = :email", { email })
-                           .getOne();
+        const register = await this.repository.query("email = ?", [email]);
 
         if (register) {
             throw new BusinessException(CodeException.EMAIL_USED_ANOTHER_CLIENT);
@@ -100,9 +89,7 @@ export class ClientService {
     }
 
     private async checkIfCellphoneUsed(cellphone: string) {
-        const queryBuilder = this.repository.createQueryBuilder("clients");
-        const register = await queryBuilder.where("cellphone = :cellphone", { cellphone })
-                           .getOne();
+        const register = await this.repository.query("cellphone = :?", [cellphone]);
 
         if (register) {
             throw new BusinessException(CodeException.CELLPHONE_USED_ANOTHER_CLIENT);
